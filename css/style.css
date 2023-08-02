@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100vh;
+    font-size: 20px;
+    background-color: #2f2281;
+}	
+.center{
+    position: relative;
+    top:35%;
+}
+.color-changed{
+   
+    /* position: absolute;
+    left: 5%; */
+    width:300px;
+    height: 300px;
+}
+/* #colorHexCode{
+    position: relative;
+    top: 3%;
+    left: 1%;
+} */
+.color-picker{
+    background-color: royalblue;
+}
+.color-picker-body{
+    background-color: peachpuff;
+}
+.mainBox, .theme-changer{
+    box-shadow: 0 25px 40px #0ef;
+}
+
+.main {
+    height: 400px;
+    width: 250px;
+    background: #3A3A38;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: verdana;
+    border-radius: 15px;
+}	
+#colorPicker {
+    background-color: none;
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 60px;
+    cursor: pointer;
+}	
+#box {
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 50px;
+    height: 40px;
+    width: 120px;
+    padding: 0 10px;
+}
+.theme-changer{
+    background-color: royalblue;
+    place-content: center;
+    /* position: relative;
+    left: 6%;
+    top:3%; */
+}
+.grids{
+    display: grid;
+    grid-template-rows: 40px 40px 40px ;
+    grid-gap: 20px ;
+}
+.theme-changer a{
+    text-decoration: none;
+    color: peachpuff;
+}
+.sidebar{
+    background-color:peachpuff;
+}
+@media (min-width:320px) and (max-width:746px){
+     .mainBox{
+        width: 250px;
+    } 
+    #mySidebar{
+        width: 30% !important;
+    }
+
+ 
+} 
+.w3-bar-item{
+    float: right;
+}
