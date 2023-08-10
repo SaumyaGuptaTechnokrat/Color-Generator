@@ -6,6 +6,33 @@ var typed = new Typed('#text', {
 });
 // var colorChanged = document.getElementById("colorChanged");
 
+//Hashcodes
+function getRandomHexColor() {
+    const ch = document.getElementById('box').value;
+    return ch.toString(16);
+  }
+
+  function changeColor() {
+    const colorChanged = document.getElementById('colorChanged');
+    const button = document.getElementById('colorChanger');
+
+    const randomColor = getRandomHexColor(); // Generate a random color
+
+    // colorChanged.style.backgroundColor = randomColor;
+
+    const r = parseInt(randomColor.substr(1, 2), 16);
+    const g = parseInt(randomColor.substr(3, 2), 16);
+    const b = parseInt(randomColor.substr(5, 2), 16);
+    const perceivedLightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+    const textColor = perceivedLightness > 128 ? '#000' : '#fff';
+    button.style.color = textColor;
+    button.style.backgroundColor = randomColor;
+  }
+
+  const colorChanger = document.getElementById('colorChanger');
+  colorChanger.addEventListener('mouseover', changeColor);
+//Hashcode
 
 
 function colorGenerator() {
@@ -40,14 +67,6 @@ document.getElementById('colorPicker')
         document.getElementById('colorHexCode').innerText = colorCode;
 
         document.getElementById("colorChanged").style.backgroundColor = colorCode;
-        // if(colorCode === '#000'){
-        //     document.getElementById('mainBox').style.backgroundColor = white;
-        // }
-      
-        if(colorChanged.style.backgroundColor=="white"){
-            colorChanged.style.color="black";
-        }
-        else if(colorChanged .style.backgroundColor=="black"){
-            colorChanged.style.color = "white";
-        }
+  
+ 
     }
