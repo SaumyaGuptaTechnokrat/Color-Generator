@@ -22,16 +22,9 @@ function colorGenerator() {
 
     // Take the hex code
     document.getElementById('box').value = color;
-    // if(colorChanged.style.backgroundColor=="#ffffff"){
-//     colorChanged.style.color="black";
-//     console.log("Color White");
-// }
-// else if(colorChanged .style.backgroundColor=="black"){
-//     colorChanged.style.color = "white";
-// }
+
 }
-// When user clicks over color picker,
-// myColor() function is called
+
 document.getElementById('colorPicker')
     .addEventListener('input', colorGenerator);
     function colorcode(){
@@ -51,3 +44,30 @@ document.getElementById('colorPicker')
             colorChanged.style.color = "white";
         }
     }
+   
+   
+    function getRandomHexColor() {
+        const ch = document.getElementById('box').value;
+        return ch.toString(16);
+      }
+    
+      function changeColor() {
+        const colorChanged = document.getElementById('colorChanged');
+        const button = document.getElementById('colorChanger');
+    
+        const randomColor = getRandomHexColor(); // Generate a random color
+    
+        // colorChanged.style.backgroundColor = randomColor;
+    
+        const r = parseInt(randomColor.substr(1, 2), 16);
+        const g = parseInt(randomColor.substr(3, 2), 16);
+        const b = parseInt(randomColor.substr(5, 2), 16);
+        const perceivedLightness = (r * 299 + g * 587 + b * 114) / 1000;
+    
+        const textColor = perceivedLightness > 128 ? '#000' : '#fff';
+        button.style.color = textColor;
+        button.style.backgroundColor = randomColor;
+      }
+    
+      const colorChanger = document.getElementById('colorChanger');
+      colorChanger.addEventListener('mouseover', changeColor);
