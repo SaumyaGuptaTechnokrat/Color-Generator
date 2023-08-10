@@ -32,7 +32,7 @@ function getRandomHexColor() {
 
   const colorChanger = document.getElementById('colorChanger');
   colorChanger.addEventListener('mouseover', changeColor);
-//Hashcodes
+//Hashcode
 
 
 function colorGenerator() {
@@ -67,14 +67,6 @@ document.getElementById('colorPicker')
         document.getElementById('colorHexCode').innerText = colorCode;
 
         document.getElementById("colorChanged").style.backgroundColor = colorCode;
-        // if(colorCode === '#000'){
-        //     document.getElementById('mainBox').style.backgroundColor = white;
-        // }
-      
-        if(colorChanged.style.backgroundColor=="white"){
-            colorChanged.style.color="black";
-        }
-        else if(colorChanged .style.backgroundColor=="black"){
-            colorChanged.style.color = "white";
-        }
+  
+ 
     }
